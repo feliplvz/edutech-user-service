@@ -190,7 +190,7 @@ El microservicio implementa una **arquitectura en capas limpia** que garantiza l
 
 1. **📥 Clonar el repositorio**
 ```bash
-git clone https://github.com/tu-usuario/edutech-user-service.git
+git clone https://github.com/feliplvz/edutech-user-service.git
 cd edutech-user-service
 ```
 
