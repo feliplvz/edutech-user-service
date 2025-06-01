@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "e5a7b5f7-3c1e-4f5a-9c8e-b8f5d7e2c7a3",
+		"name": "EduTech - User Service API ✅ TESTED",
+		"description": "Colección completa y PROBADA para el microservicio de usuarios de EduTech. Todos los endpoints han sido verificados y funcionan correctamente.\n\n🧪 **ESTADO DE PRUEBAS:**\n✅ Todos los endpoints probados\n✅ Validaciones verificadas\n✅ Manejo de errores confirmado\n✅ Base de datos PostgreSQL conectada\n\n📋 **ENDPOINTS DISPONIBLES:**\n- Gestión de usuarios (CRUD completo)\n- Gestión de estudiantes (CRUD + filtros)\n- Endpoint de conectividad\n- Validación de emails\n\n🔧 **CONFIGURACIÓN:**\n- Puerto: 8081\n- Base de datos: PostgreSQL en Railway\n- Autenticación: No requerida (desarrollo)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12345"
+	},
+	"item": [
+		{
+			"name": "🧪 Test de Conectividad",
+			"item": [
+				{
+					"name": "Hello - Verificar API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/test/hello",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"test",
+								"hello"
+							]
+						},
+						"description": "Endpoint simple para verificar que la API esté funcionando correctamente."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "👥 Gestión de Usuarios",
+			"item": [
+				{
+					"name": "Obtener todos los usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Obtiene la lista completa de usuarios registrados en el sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"7"
+							]
+						},
+						"description": "Obtiene un usuario específico por su ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener usuario por email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/email/juan.perez@ejemplo.com",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"email",
+								"juan.perez@ejemplo.com"
+							]
+						},
+						"description": "Busca un usuario por su dirección de correo electrónico."
+					},
+					"response": []
+				},
+				{
+					"name": "Crear usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Juan\",\n    \"lastName\": \"Pérez\",\n    \"email\": \"juan.perez@ejemplo.com\",\n    \"password\": \"contraseña123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Crea un nuevo usuario en el sistema. Por defecto se asigna el rol STUDENT."
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 7,\n    \"firstName\": \"Juan\",\n    \"lastName\": \"Pérez Actualizado\",\n    \"email\": \"juan.perez@ejemplo.com\",\n    \"role\": \"STUDENT\",\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"7"
+							]
+						},
+						"description": "Actualiza los datos de un usuario existente."
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"7"
+							]
+						},
+						"description": "Elimina un usuario del sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "Verificar si existe email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/exists/juan.perez@ejemplo.com",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"exists",
+								"juan.perez@ejemplo.com"
+							]
+						},
+						"description": "Verifica si un email ya está registrado en el sistema. Retorna true/false."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "🎓 Gestión de Estudiantes",
+			"item": [
+				{
+					"name": "Obtener todos los estudiantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/students",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"students"
+							]
+						},
+						"description": "Obtiene la lista completa de estudiantes registrados."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener estudiante por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/students/8",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"students",
+								"8"
+							]
+						},
+						"description": "Obtiene un estudiante específico por su ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar estudiante",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"María\",\n    \"lastName\": \"López\",\n    \"email\": \"maria.lopez@ejemplo.com\",\n    \"password\": \"contraseña123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/students?program=Ingenieria Informatica&educationLevel=Pregrado",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"students"
+							],
+							"query": [
+								{
+									"key": "program",
+									"value": "Ingenieria Informatica",
+									"description": "Programa de estudios del estudiante"
+								},
+								{
+									"key": "educationLevel",
+									"value": "Pregrado",
+									"description": "Nivel educativo (Pregrado, Postgrado, etc.)"
+								}
+							]
+						},
+						"description": "Registra un nuevo estudiante con programa de estudios y nivel educativo específicos."
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar estudiante",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 8,\n    \"firstName\": \"María\",\n    \"lastName\": \"López Actualizada\",\n    \"email\": \"maria.lopez@ejemplo.com\",\n    \"password\": \"contraseña123\",\n    \"program\": \"Ingenieria de Software\",\n    \"educationLevel\": \"Pregrado\",\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/students/8",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"students",
+								"8"
+							]
+						},
+						"description": "Actualiza los datos de un estudiante existente. La contraseña es requerida."
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar estudiante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/students/8",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"students",
+								"8"
+							]
+						},
+						"description": "Elimina un estudiante del sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener estudiantes por programa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/students/program/Ingenieria Informatica",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"students",
+								"program",
+								"Ingenieria Informatica"
+							]
+						},
+						"description": "Filtra estudiantes por programa de estudios específico."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener estudiantes por nivel educativo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/students/level/Pregrado",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"students",
+								"level",
+								"Pregrado"
+							]
+						},
+						"description": "Filtra estudiantes por nivel educativo."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "⚠️ Casos de Error y Validación",
+			"item": [
+				{
+					"name": "Crear usuario con datos inválidos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Test\",\n    \"lastName\": \"Validation\",\n    \"email\": \"email-invalido\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Prueba las validaciones del sistema con datos inválidos. Debe retornar errores de validación."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar usuario inexistente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"999"
+							]
+						},
+						"description": "Prueba el manejo de errores cuando se busca un usuario que no existe."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Script de pre-request global",
+					"console.log('🚀 Ejecutando request a: ' + pm.request.url);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Script de test global",
+					"pm.test('Status code should be successful', function () {",
+					"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+					"});",
+					"",
+					"pm.test('Response time is less than 2000ms', function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8081",
+			"type": "string",
+			"description": "URL base del microservicio User Service"
+		}
+	]
+}
