@@ -2,7 +2,6 @@ package com.edutech.userservice.service;
 
 import com.edutech.userservice.dto.UserDTO;
 import com.edutech.userservice.dto.UserRegistrationDTO;
-import com.edutech.userservice.model.User;
 import com.edutech.userservice.model.UserRole;
 
 import java.util.List;
