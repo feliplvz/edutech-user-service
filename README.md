@@ -2,7 +2,11 @@
 
 [![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://openjdk.java.net/projects/jdk/17/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.0-brightgreen.svg)](https://spring.io/projects/spring-boot)
-[![PostgreSQL](https://img.shie## 📝 Notas Importantes
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.8-blue.svg)](https://www.postgresql.org/)
+[![API](https://img.shields.io/badge/API-REST-green.svg)](https://restfulapi.net/)
+[![Tests](https://img.shields.io/badge/Tests-✅%20Passed-success.svg)](./Reporte_Pruebas.md)
+
+## 📝 Notas Importantes
 
 #### 📋 **Setup Requerido:**
 ```bash
@@ -20,7 +24,6 @@ cat .gitignore | grep .env
 
 - 📋 **[Reporte de Pruebas](./Reporte_Pruebas.md)**: Resultados completos de testing
 - 🔐 **[Guía de Seguridad](./SECURITY.md)**: Medidas de seguridad implementadas
-- 🔄 **[Migración de Seguridad](./SECURITY_MIGRATION.md)**: Detalles de la migración a variables de entorno
 - 📜 **[Scripts de Ejecución](./SCRIPTS.md)**: Guía completa de scripts de desarrollo
 
 ### 🏷️ **Badges del Proyecto**
