@@ -2,6 +2,31 @@
 
 [![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://openjdk.java.net/projects/jdk/17/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.0-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![PostgreSQL](https://img.shie## 📝 Notas Importantes
+
+#### 📋 **Setup Requerido:**
+```bash
+# 1. Copiar plantilla
+cp .env.example .env
+
+# 2. Editar con credenciales reales (NUNCA subir .env al repo)
+nano .env
+
+# 3. Verificar que .env está en .gitignore
+cat .gitignore | grep .env
+```
+
+### 📚 **Documentación Adicional**
+
+- 📋 **[Reporte de Pruebas](./Reporte_Pruebas.md)**: Resultados completos de testing
+- 🔐 **[Guía de Seguridad](./SECURITY.md)**: Medidas de seguridad implementadas
+- 🔄 **[Migración de Seguridad](./SECURITY_MIGRATION.md)**: Detalles de la migración a variables de entorno
+- 📜 **[Scripts de Ejecución](./SCRIPTS.md)**: Guía completa de scripts de desarrollo
+
+### 🏷️ **Badges del Proyecto**
+
+[![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://openjdk.java.net/projects/jdk/17/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.0-brightgreen.svg)](https://spring.io/projects/spring-boot)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.8-blue.svg)](https://www.postgresql.org/)
 [![API](https://img.shields.io/badge/API-REST-green.svg)](https://restfulapi.net/)
 [![Tests](https://img.shields.io/badge/Tests-✅%20Passed-success.svg)](./REPORTE_PRUEBAS_COMPLETO.md)
@@ -194,7 +219,22 @@ git clone https://github.com/feliplvz/edutech-user-service.git
 cd edutech-user-service
 ```
 
-2. **🔐 Configurar variables de entorno (IMPORTANTE)**
+2. **🚀 Opción A: Usando Scripts de Ejecución (RECOMENDADO)**
+```bash
+# macOS/Linux - Configuración automática
+./run.sh setup
+./run.sh dev
+
+# Windows - Configuración automática  
+run.bat setup
+run.bat dev
+
+# Inicio rápido para desarrollo diario
+./start.sh        # macOS/Linux
+start.bat         # Windows
+```
+
+3. **🔐 Opción B: Configuración Manual**
 ```bash
 # Copiar archivo de ejemplo
 cp .env.example .env
@@ -203,7 +243,51 @@ cp .env.example .env
 nano .env  # o tu editor preferido
 ```
 
-3. **🔨 Compilar el proyecto**
+4. **🔨 Compilar el proyecto**
+```bash
+mvn clean install -DskipTests
+```
+
+5. **🚀 Ejecutar la aplicación**
+```bash
+mvn spring-boot:run
+```
+
+## 📜 **Scripts de Ejecución Disponibles**
+
+### 🖥️ **macOS/Linux**
+| Script | Propósito | Uso |
+|--------|-----------|-----|
+| `./run.sh` | Script completo con múltiples comandos | `./run.sh [comando]` |
+| `./start.sh` | Inicio rápido para desarrollo | `./start.sh` |
+
+### 🪟 **Windows**
+| Script | Propósito | Uso |
+|--------|-----------|-----|
+| `run.bat` | Script completo con múltiples comandos | `run.bat [comando]` |
+| `start.bat` | Inicio rápido para desarrollo | `start.bat` |
+
+### 🔧 **Comandos del Script Principal**
+```bash
+# Configuración inicial (primera vez)
+./run.sh setup     # macOS/Linux
+run.bat setup      # Windows
+
+# Modo desarrollo (H2)
+./run.sh dev       # macOS/Linux  
+run.bat dev        # Windows
+
+# Modo producción (PostgreSQL)
+./run.sh prod      # macOS/Linux
+run.bat prod       # Windows
+
+# Ejecutar tests
+./run.sh test      # macOS/Linux
+run.bat test       # Windows
+
+# Ver ayuda completa
+./run.sh help      # macOS/Linux
+run.bat help       # Windows
 ```bash
 ./mvnw clean install -DskipTests
 ```
