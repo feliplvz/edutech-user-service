@@ -31,3 +31,15 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Environment Variables ###
+.env
+*.env
+!.env.example
+
+### Security ###
+*.key
+*.pem
+*.crt
+secrets/
+config/secrets/

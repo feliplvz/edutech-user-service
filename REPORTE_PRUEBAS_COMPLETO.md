@@ -199,5 +199,4 @@ La **API EduTech User Service** está **completamente funcional** y lista para u
 - ✅ **Base de datos conectada**
 - ✅ **Casos de prueba documentados**
 
-**Fecha de pruebas**: 31 de mayo de 2025  
-**Estado final**: 🎯 **APROBADO - READY FOR USE**
+**Fecha de pruebas**: 31 de mayo de 2025 

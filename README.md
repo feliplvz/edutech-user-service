@@ -194,7 +194,16 @@ git clone https://github.com/feliplvz/edutech-user-service.git
 cd edutech-user-service
 ```
 
-2. **🔨 Compilar el proyecto**
+2. **🔐 Configurar variables de entorno (IMPORTANTE)**
+```bash
+# Copiar archivo de ejemplo
+cp .env.example .env
+
+# Editar con tus credenciales reales
+nano .env  # o tu editor preferido
+```
+
+3. **🔨 Compilar el proyecto**
 ```bash
 ./mvnw clean install -DskipTests
 ```
@@ -214,18 +223,34 @@ cd edutech-user-service
 ### 🗄️ Configuración de Base de Datos
 
 #### 💻 Desarrollo (H2 - Por defecto)
-```properties
-# application.properties (desarrollo)
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.h2.console.enabled=true
+```bash
+# Sin configuración adicional - funciona automáticamente
+./mvnw spring-boot:run
+# Acceder a H2 Console: http://localhost:8081/h2-console
 ```
 
 #### 🐘 Producción (PostgreSQL)
-```properties
-# Variables de entorno requeridas
-SPRING_DATASOURCE_URL=jdbc:postgresql://host:port/database
-SPRING_DATASOURCE_USERNAME=username
-SPRING_DATASOURCE_PASSWORD=password
+```bash
+# Configurar archivo .env con tus credenciales:
+DB_URL=jdbc:postgresql://tu-host:puerto/tu-database
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
+```
+
+### 🔐 Seguridad - Variables de Entorno
+
+⚠️ **IMPORTANTE**: Este proyecto usa variables de entorno para proteger credenciales sensibles.
+
+#### 📋 **Setup Requerido:**
+```bash
+# 1. Copiar plantilla
+cp .env.example .env
+
+# 2. Editar con credenciales reales (NUNCA subir .env al repo)
+nano .env
+
+# 3. Verificar que .env está en .gitignore
+cat .gitignore | grep .env
 ```
 
 ### 🧪 Verificación de la Instalación

@@ -63,6 +63,13 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- Dotenv para cargar variables de entorno desde archivo .env -->
+		<dependency>
+			<groupId>me.paulschwarz</groupId>
+			<artifactId>spring-dotenv</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
 
 	</dependencies>
 
