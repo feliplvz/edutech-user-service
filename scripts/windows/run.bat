@@ -66,9 +66,9 @@ echo   %GREEN%start%NC%     - Iniciar aplicación (alias para dev)
 echo   %GREEN%help%NC%      - Mostrar esta ayuda
 echo.
 echo %YELLOW%Ejemplos:%NC%
-echo   %BLUE%run.bat setup%NC%   # Primera configuración
-echo   %BLUE%run.bat dev%NC%     # Desarrollo con H2
-echo   %BLUE%run.bat prod%NC%    # Producción con PostgreSQL
+echo   %BLUE%scripts\windows\run.bat setup%NC%   # Primera configuración
+echo   %BLUE%scripts\windows\run.bat dev%NC%     # Desarrollo con H2
+echo   %BLUE%scripts\windows\run.bat prod%NC%    # Producción con PostgreSQL
 goto :eof
 
 :check_dependencies
@@ -121,7 +121,7 @@ echo %CYAN%📦 Instalando dependencias...%NC%
 %MVN_CMD% clean install -DskipTests
 
 echo %GREEN%🎉 ¡Proyecto configurado correctamente!%NC%
-echo %YELLOW%💡 Siguiente paso: run.bat dev%NC%
+echo %YELLOW%💡 Siguiente paso: scripts\windows\run.bat dev%NC%
 goto :eof
 
 :run_dev
@@ -146,7 +146,7 @@ echo %CYAN%🚀 Iniciando en modo PRODUCCIÓN...%NC%
 rem Verificar archivo .env
 if not exist ".env" (
     echo %RED%❌ Archivo .env no encontrado%NC%
-    echo %YELLOW%💡 Ejecuta: run.bat setup%NC%
+    echo %YELLOW%💡 Ejecuta: scripts\windows\run.bat setup%NC%
     exit /b 1
 )
 

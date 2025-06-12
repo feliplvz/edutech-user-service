@@ -8,10 +8,6 @@ Esta guía documenta todas las medidas de seguridad implementadas en el **EduTec
 
 ### 🔐 Gestión de Credenciales
 
-#### ✅ Variables de Entorno
-- **❌ ANTES**: Credenciales hardcodeadas en `application.properties`
-- **✅ AHORA**: Variables de entorno con valores por defecto seguros
-
 ```properties
 # Configuración segura actual
 spring.datasource.url=${DB_URL:jdbc:h2:mem:testdb}

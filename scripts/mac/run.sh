@@ -42,9 +42,9 @@ show_help() {
     echo -e "  ${GREEN}help${NC}      - Mostrar esta ayuda"
     echo ""
     echo -e "${YELLOW}Ejemplos:${NC}"
-    echo -e "  ${BLUE}./run.sh setup${NC}   # Primera configuración"
-    echo -e "  ${BLUE}./run.sh dev${NC}     # Desarrollo con H2"
-    echo -e "  ${BLUE}./run.sh prod${NC}    # Producción con PostgreSQL"
+    echo -e "  ${BLUE}./scripts/mac/run.sh setup${NC}   # Primera configuración"
+    echo -e "  ${BLUE}./scripts/mac/run.sh dev${NC}     # Desarrollo con H2"
+    echo -e "  ${BLUE}./scripts/mac/run.sh prod${NC}    # Producción con PostgreSQL"
 }
 
 # Función para verificar dependencias
@@ -92,7 +92,7 @@ setup_project() {
     $MVN_CMD clean install -DskipTests
     
     echo -e "${GREEN}🎉 ¡Proyecto configurado correctamente!${NC}"
-    echo -e "${YELLOW}💡 Siguiente paso: ./run.sh dev${NC}"
+    echo -e "${YELLOW}💡 Siguiente paso: ./scripts/mac/run.sh dev${NC}"
 }
 
 # Función para modo desarrollo
@@ -117,7 +117,7 @@ run_prod() {
     # Verificar archivo .env
     if [ ! -f ".env" ]; then
         echo -e "${RED}❌ Archivo .env no encontrado${NC}"
-        echo -e "${YELLOW}💡 Ejecuta: ./run.sh setup${NC}"
+        echo -e "${YELLOW}💡 Ejecuta: ./scripts/mac/run.sh setup${NC}"
         exit 1
     fi
     

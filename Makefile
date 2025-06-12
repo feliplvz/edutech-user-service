@@ -3,14 +3,14 @@
 
 .PHONY: help setup dev prod start test clean build
 
-# Detectar sistema operativo
+# Detectar sistema operativo para rutas de scripts
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
-    SCRIPT_EXT = sh
+    SCRIPT_DIR = scripts/mac
 else ifeq ($(UNAME_S),Linux)
-    SCRIPT_EXT = sh
+    SCRIPT_DIR = scripts/mac
 else
-    SCRIPT_EXT = bat
+    SCRIPT_DIR = scripts/windows
 endif
 
 help: ## 📚 Mostrar ayuda
@@ -21,52 +21,66 @@ help: ## 📚 Mostrar ayuda
 	@echo "💡 Ejemplo: make dev"
 
 setup: ## 🔧 Configurar proyecto (primera vez)
-ifeq ($(SCRIPT_EXT),sh)
-	@./run.sh setup
+ifeq ($(UNAME_S),Linux)
+	@./$(SCRIPT_DIR)/controlador.sh setup
+else ifeq ($(UNAME_S),Darwin)
+	@./$(SCRIPT_DIR)/controlador.sh setup
 else
-	@run.bat setup
+	@./$(SCRIPT_DIR)/controlador.bat setup
 endif
 
 dev: ## 🚀 Ejecutar en modo desarrollo (H2)
-ifeq ($(SCRIPT_EXT),sh)
-	@./run.sh dev
+ifeq ($(UNAME_S),Linux)
+	@./$(SCRIPT_DIR)/controlador.sh dev
+else ifeq ($(UNAME_S),Darwin)
+	@./$(SCRIPT_DIR)/controlador.sh dev
 else
-	@run.bat dev
+	@./$(SCRIPT_DIR)/controlador.bat dev
 endif
 
 prod: ## 🏭 Ejecutar en modo producción (PostgreSQL)
-ifeq ($(SCRIPT_EXT),sh)
-	@./run.sh prod
+ifeq ($(UNAME_S),Linux)
+	@./$(SCRIPT_DIR)/controlador.sh prod
+else ifeq ($(UNAME_S),Darwin)
+	@./$(SCRIPT_DIR)/controlador.sh prod
 else
-	@run.bat prod
+	@./$(SCRIPT_DIR)/controlador.bat prod
 endif
 
 start: ## ⚡ Inicio rápido para desarrollo
-ifeq ($(SCRIPT_EXT),sh)
-	@./start.sh
+ifeq ($(UNAME_S),Linux)
+	@./$(SCRIPT_DIR)/iniciar.sh
+else ifeq ($(UNAME_S),Darwin)
+	@./$(SCRIPT_DIR)/iniciar.sh
 else
-	@start.bat
+	@./$(SCRIPT_DIR)/iniciar.bat
 endif
 
 test: ## 🧪 Ejecutar tests
-ifeq ($(SCRIPT_EXT),sh)
-	@./run.sh test
+ifeq ($(UNAME_S),Linux)
+	@./$(SCRIPT_DIR)/controlador.sh test
+else ifeq ($(UNAME_S),Darwin)
+	@./$(SCRIPT_DIR)/controlador.sh test
 else
-	@run.bat test
+	@./$(SCRIPT_DIR)/controlador.bat test
 endif
 
 clean: ## 🧹 Limpiar proyecto
-ifeq ($(SCRIPT_EXT),sh)
-	@./run.sh clean
+ifeq ($(UNAME_S),Linux)
+	@./$(SCRIPT_DIR)/controlador.sh clean
+else ifeq ($(UNAME_S),Darwin)
+	@./$(SCRIPT_DIR)/controlador.sh clean
 else
-	@run.bat clean
+	@./$(SCRIPT_DIR)/controlador.bat clean
 endif
 
 build: ## 🔨 Compilar proyecto
-ifeq ($(SCRIPT_EXT),sh)
-	@./run.sh build
+ifeq ($(UNAME_S),Linux)
+	@./$(SCRIPT_DIR)/controlador.sh build
+else ifeq ($(UNAME_S),Darwin)
+	@./$(SCRIPT_DIR)/controlador.sh build
 else
-	@run.bat build
+	@./$(SCRIPT_DIR)/controlador.bat build
 endif
 
 # Alias para compatibilidad

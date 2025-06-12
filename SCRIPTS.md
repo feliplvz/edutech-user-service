@@ -2,54 +2,59 @@
 
 ## 📋 **Estructura de Scripts Organizados**
 
-El proyecto implementa una **estructura profesional de scripts** organizada por plataforma, similar a proyectos empresariales.
+El proyecto implementa una **estructura profesional de scripts** organizada por plataforma, similar a proyectos empresariales, con scripts específicos para cada sistema operativo.
 
 ### 📁 **Estructura de Directorios**
 ```
 user-service/
-├── 📜 manage.sh              # Script principal (macOS/Linux)
-├── 📜 manage.bat             # Script principal (Windows)
-├── 📜 start.sh               # Inicio rápido (macOS/Linux)
-├── 📜 start.bat              # Inicio rápido (Windows)
 └── 📂 scripts/
     ├── 📂 mac/               # Scripts específicos macOS/Linux
     │   ├── controlador.sh    # Controlador principal
     │   ├── configurar.sh     # Configuración inicial
     │   ├── iniciar.sh        # Inicio del servicio
     │   ├── verificar-estado.sh # Verificar estado
-    │   └── detener.sh        # Detener servicio
+    │   ├── detener.sh        # Detener servicio
+    │   └── run.sh            # Script anterior (compatibilidad)
     └── 📂 windows/           # Scripts específicos Windows
         ├── controlador.bat   # Controlador principal
         ├── configurar.bat    # Configuración inicial
-        └── iniciar.bat       # Inicio del servicio
+        ├── iniciar.bat       # Inicio del servicio
+        └── run.bat           # Script anterior (compatibilidad)
 ```
 
-## 🎯 **Scripts Principales (Cross-Platform)**
+## 🎯 **Scripts Principales**
 
-### 🖥️ **manage.sh / manage.bat**
-Script maestro que delega a los scripts específicos de cada plataforma.
+### 🖥️ **Controlador Principal**
+Script maestro para todas las operaciones del proyecto.
 
 ```bash
 # macOS/Linux
-./manage.sh [comando]
+./scripts/mac/controlador.sh [comando]
 
 # Windows
-manage.bat [comando]
+./scripts/windows/controlador.bat [comando]
 ```
 
-### 🚀 **start.sh / start.bat**
+### 🚀 **Inicio Rápido**
 Scripts de inicio rápido para desarrollo diario.
 
 ```bash
 # macOS/Linux
-./start.sh
+./scripts/mac/iniciar.sh
 
 # Windows
-start.bat
+./scripts/windows/iniciar.bat
 ```
 
+## 📖 **Comandos Disponibles**
+
+### 🔧 **Configuración Inicial**
+```bash
+# macOS/Linux
+./scripts/mac/controlador.sh setup
+
 # Windows
-run.bat setup
+./scripts/windows/controlador.bat setup
 ```
 **Funciones:**
 - ✅ Crea archivo `.env` desde `.env.example`
@@ -59,12 +64,12 @@ run.bat setup
 ### 🚀 **Modo Desarrollo (Recomendado)**
 ```bash
 # macOS/Linux
-./run.sh dev
-./start.sh          # Opción rápida
+./scripts/mac/controlador.sh dev
+./scripts/mac/iniciar.sh          # Opción rápida
 
 # Windows  
-run.bat dev
-start.bat           # Opción rápida
+./scripts/windows/controlador.bat dev
+./scripts/windows/iniciar.bat     # Opción rápida
 ```
 **Características:**
 - 🗄️ Base de datos H2 en memoria
@@ -75,10 +80,10 @@ start.bat           # Opción rápida
 ### 🏭 **Modo Producción**
 ```bash
 # macOS/Linux
-./run.sh prod
+./scripts/mac/controlador.sh prod
 
 # Windows
-run.bat prod
+./scripts/windows/controlador.bat prod
 ```
 **Características:**
 - 🐘 Base de datos PostgreSQL
@@ -88,29 +93,29 @@ run.bat prod
 ### 🧪 **Testing**
 ```bash
 # macOS/Linux
-./run.sh test
+./scripts/mac/controlador.sh test
 
 # Windows
-run.bat test
+./scripts/windows/controlador.bat test
 ```
 
 ### 🧹 **Utilidades**
 ```bash
 # Limpiar proyecto
-./run.sh clean     # macOS/Linux
-run.bat clean      # Windows
+./scripts/mac/controlador.sh clean     # macOS/Linux
+./scripts/windows/controlador.bat clean      # Windows
 
 # Compilar proyecto
-./run.sh build     # macOS/Linux
-run.bat build      # Windows
+./scripts/mac/controlador.sh build     # macOS/Linux
+./scripts/windows/controlador.bat build      # Windows
 ```
 
 ---
 
 ## 📊 **Comparación de Scripts**
 
-| Característica | Script Principal | Script Start |
-|----------------|------------------|--------------|
+| Característica | Controlador | Iniciar |
+|----------------|-------------|----------|
 | **Comandos** | Múltiples opciones | Solo inicio |
 | **Configuración** | Setup automático | Manual |
 | **Base de Datos** | H2 y PostgreSQL | Solo H2 |
@@ -123,29 +128,29 @@ run.bat build      # Windows
 ### 🆕 **Primera vez:**
 ```bash
 # 1. Configurar proyecto
-./run.sh setup     # macOS/Linux
-run.bat setup      # Windows
+./scripts/mac/controlador.sh setup     # macOS/Linux
+./scripts/windows/controlador.bat setup      # Windows
 
 # 2. Editar .env con credenciales reales (opcional)
 nano .env
 
 # 3. Iniciar en modo desarrollo
-./run.sh dev       # macOS/Linux
-run.bat dev        # Windows
+./scripts/mac/controlador.sh dev       # macOS/Linux
+./scripts/windows/controlador.bat dev        # Windows
 ```
 
 ### 📅 **Uso diario:**
 ```bash
 # Inicio rápido para desarrollo
-./start.sh         # macOS/Linux
-start.bat          # Windows
+./scripts/mac/iniciar.sh         # macOS/Linux
+./scripts/windows/iniciar.bat          # Windows
 ```
 
 ### 🏭 **Para producción:**
 ```bash
 # Asegurar que .env tiene credenciales reales
-./run.sh prod      # macOS/Linux
-run.bat prod       # Windows
+./scripts/mac/controlador.sh prod      # macOS/Linux
+./scripts/windows/controlador.bat prod       # Windows
 ```
 
 ---
@@ -155,10 +160,10 @@ run.bat prod       # Windows
 ### ✅ **Probar Script de Desarrollo**
 ```bash
 # macOS/Linux
-./start.sh
+./scripts/mac/iniciar.sh
 
 # Windows
-start.bat
+./scripts/windows/iniciar.bat
 
 # Verificar en navegador:
 # http://localhost:8081/api/test/hello
@@ -167,12 +172,12 @@ start.bat
 ### 🧪 **Probar Script Completo**
 ```bash
 # Mostrar ayuda
-./run.sh help      # macOS/Linux
-run.bat help       # Windows
+./scripts/mac/controlador.sh help      # macOS/Linux
+./scripts/windows/controlador.bat help       # Windows
 
 # Ejecutar tests
-./run.sh test      # macOS/Linux
-run.bat test       # Windows
+./scripts/mac/controlador.sh test      # macOS/Linux
+./scripts/windows/controlador.bat test       # Windows
 ```
 
 ---
@@ -181,7 +186,7 @@ run.bat test       # Windows
 
 ### 🚫 **Error: "Permission denied" (macOS/Linux)**
 ```bash
-chmod +x run.sh start.sh
+chmod +x scripts/mac/*.sh
 ```
 
 ### 🚫 **Error: "Java not found"**
@@ -194,25 +199,9 @@ chmod +x run.sh start.sh
 
 ### 🚫 **Error: ".env not found" (modo prod)**
 ```bash
-./run.sh setup     # macOS/Linux
-run.bat setup      # Windows
+./scripts/mac/controlador.sh setup     # macOS/Linux
+./scripts/windows/controlador.bat setup      # Windows
 ```
-
----
-
-## 📝 **Personalización**
-
-### 🔧 **Variables de Script**
-Los scripts detectan automáticamente:
-- ✅ Java instalado
-- ✅ Maven vs Maven Wrapper
-- ✅ Archivos de configuración
-- ✅ Sistema operativo
-
-### 🎨 **Modificar Scripts**
-- `run.sh` / `run.bat` - Script principal
-- `start.sh` / `start.bat` - Script simple
-- Editable según necesidades del proyecto
 
 ---
 
@@ -223,4 +212,4 @@ Los scripts detectan automáticamente:
 
 ---
 
-**💡 Tip:** Usa `./start.sh` (macOS/Linux) o `start.bat` (Windows) para desarrollo diario rápido.
+**💡 Tip:** Usa `./scripts/mac/iniciar.sh` (macOS/Linux) o `./scripts/windows/iniciar.bat` (Windows) para desarrollo diario rápido.

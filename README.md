@@ -225,16 +225,16 @@ cd edutech-user-service
 2. **🚀 Opción A: Usando Scripts de Ejecución (RECOMENDADO)**
 ```bash
 # macOS/Linux - Configuración automática
-./manage.sh setup
-./manage.sh dev
+./scripts/mac/controlador.sh setup
+./scripts/mac/controlador.sh dev
 
 # Windows - Configuración automática  
-manage.bat setup
-manage.bat dev
+scripts\windows\controlador.bat setup
+scripts\windows\controlador.bat dev
 
 # Inicio rápido para desarrollo diario
-./start.sh        # macOS/Linux
-start.bat         # Windows
+./scripts/mac/iniciar.sh        # macOS/Linux
+scripts\windows\iniciar.bat     # Windows
 ```
 
 3. **🔐 Opción B: Configuración Manual**
@@ -258,49 +258,48 @@ mvn spring-boot:run
 
 ## 📜 **Scripts de Ejecución Disponibles**
 
-### 🎯 **Scripts Principales (Cross-Platform)**
+### 🖥️ **Scripts para macOS/Linux**
 | Script | Propósito | Uso |
 |--------|-----------|-----|
-| `./manage.sh` / `manage.bat` | Script maestro de control | `./manage.sh [comando]` |
-| `./start.sh` / `start.bat` | Inicio rápido para desarrollo | `./start.sh` |
+| `controlador.sh` | Control principal | `./scripts/mac/controlador.sh [comando]` |
+| `configurar.sh` | Configuración inicial | `./scripts/mac/configurar.sh` |
+| `iniciar.sh` | Inicio rápido | `./scripts/mac/iniciar.sh` |
+| `verificar-estado.sh` | Verificar estado del servicio | `./scripts/mac/verificar-estado.sh` |
+| `detener.sh` | Detener servicio | `./scripts/mac/detener.sh` |
 
-### 🖥️ **Scripts Específicos - macOS/Linux**
-| Script | Propósito | Ubicación |
-|--------|-----------|-----------|
-| `controlador.sh` | Control principal | `scripts/mac/` |
-| `configurar.sh` | Configuración inicial | `scripts/mac/` |
-| `iniciar.sh` | Inicio rápido | `scripts/mac/` |
-| `verificar-estado.sh` | Verificar estado del servicio | `scripts/mac/` |
-| `detener.sh` | Detener servicio | `scripts/mac/` |
-
-### 🪟 **Scripts Específicos - Windows**
+### 🪟 **Scripts para Windows**
+| Script | Propósito | Uso |
+|--------|-----------|-----|
+| `controlador.bat` | Control principal | `scripts\windows\controlador.bat [comando]` |
+| `configurar.bat` | Configuración inicial | `scripts\windows\configurar.bat` |
+| `iniciar.bat` | Inicio rápido | `scripts\windows\iniciar.bat` |
 | Script | Propósito | Ubicación |
 |--------|-----------|-----------|
 | `controlador.bat` | Control principal | `scripts/windows/` |
 | `configurar.bat` | Configuración inicial | `scripts/windows/` |
 | `iniciar.bat` | Inicio rápido | `scripts/windows/` |
 
-### 🔧 **Comandos del Script Principal**
+### 🔧 **Comandos de los Scripts**
 ```bash
 # Configuración inicial (primera vez)
-./manage.sh setup     # macOS/Linux
-manage.bat setup      # Windows
+./scripts/mac/controlador.sh setup     # macOS/Linux
+scripts\windows\controlador.bat setup  # Windows
 
 # Modo desarrollo (H2)
-./manage.sh dev       # macOS/Linux  
-manage.bat dev        # Windows
+./scripts/mac/controlador.sh dev       # macOS/Linux  
+scripts\windows\controlador.bat dev    # Windows
 
 # Modo producción (PostgreSQL)
-./manage.sh prod      # macOS/Linux
-manage.bat prod       # Windows
+./scripts/mac/controlador.sh prod      # macOS/Linux
+scripts\windows\controlador.bat prod   # Windows
 
 # Ejecutar tests
-./manage.sh test      # macOS/Linux
-manage.bat test       # Windows
+./scripts/mac/controlador.sh test      # macOS/Linux
+scripts\windows\controlador.bat test   # Windows
 
 # Ver ayuda completa
-./manage.sh help      # macOS/Linux
-manage.bat help       # Windows
+./scripts/mac/controlador.sh help      # macOS/Linux
+scripts\windows\controlador.bat help   # Windows
 ```bash
 ./mvnw clean install -DskipTests
 ```
@@ -333,10 +332,6 @@ DB_URL=jdbc:postgresql://tu-host:puerto/tu-database
 DB_USERNAME=tu_usuario
 DB_PASSWORD=tu_contraseña
 ```
-
-### 🔐 Seguridad - Variables de Entorno
-
-⚠️ **IMPORTANTE**: Este proyecto usa variables de entorno para proteger credenciales sensibles.
 
 #### 📋 **Setup Requerido:**
 ```bash
@@ -571,30 +566,9 @@ copies of the Software...
 
 ---
 
-## 🎉 Estado del Proyecto
-
-```
-🎯 PROYECTO: EduTech User Service
-✅ ESTADO: COMPLETAMENTE FUNCIONAL
-🧪 TESTING: 100% ENDPOINTS VERIFICADOS
-🚀 READY FOR: DESARROLLO Y PRODUCCIÓN
-📅 ÚLTIMA ACTUALIZACIÓN: 31 de Mayo 2025
-```
-
-### 🏆 Logros del Proyecto
-
-- ✅ **16 endpoints** implementados y probados
-- ✅ **Arquitectura limpia** y escalable
-- ✅ **Documentación completa** y actualizada
-- ✅ **Testing exhaustivo** con Postman
-- ✅ **Base de datos** PostgreSQL integrada
-- ✅ **Manejo robusto** de errores y validaciones
-
 ---
 
 <div align="center">
-
-**🌟 ¡Gracias por usar EduTech User Service! 🌟**
 
 Para más información, visita nuestra [documentación completa](./REPORTE_PRUEBAS_COMPLETO.md)
 
