@@ -225,12 +225,12 @@ cd edutech-user-service
 2. **🚀 Opción A: Usando Scripts de Ejecución (RECOMENDADO)**
 ```bash
 # macOS/Linux - Configuración automática
-./run.sh setup
-./run.sh dev
+./manage.sh setup
+./manage.sh dev
 
 # Windows - Configuración automática  
-run.bat setup
-run.bat dev
+manage.bat setup
+manage.bat dev
 
 # Inicio rápido para desarrollo diario
 ./start.sh        # macOS/Linux
@@ -258,39 +258,49 @@ mvn spring-boot:run
 
 ## 📜 **Scripts de Ejecución Disponibles**
 
-### 🖥️ **macOS/Linux**
+### 🎯 **Scripts Principales (Cross-Platform)**
 | Script | Propósito | Uso |
 |--------|-----------|-----|
-| `./run.sh` | Script completo con múltiples comandos | `./run.sh [comando]` |
-| `./start.sh` | Inicio rápido para desarrollo | `./start.sh` |
+| `./manage.sh` / `manage.bat` | Script maestro de control | `./manage.sh [comando]` |
+| `./start.sh` / `start.bat` | Inicio rápido para desarrollo | `./start.sh` |
 
-### 🪟 **Windows**
-| Script | Propósito | Uso |
-|--------|-----------|-----|
-| `run.bat` | Script completo con múltiples comandos | `run.bat [comando]` |
-| `start.bat` | Inicio rápido para desarrollo | `start.bat` |
+### 🖥️ **Scripts Específicos - macOS/Linux**
+| Script | Propósito | Ubicación |
+|--------|-----------|-----------|
+| `controlador.sh` | Control principal | `scripts/mac/` |
+| `configurar.sh` | Configuración inicial | `scripts/mac/` |
+| `iniciar.sh` | Inicio rápido | `scripts/mac/` |
+| `verificar-estado.sh` | Verificar estado del servicio | `scripts/mac/` |
+| `detener.sh` | Detener servicio | `scripts/mac/` |
+
+### 🪟 **Scripts Específicos - Windows**
+| Script | Propósito | Ubicación |
+|--------|-----------|-----------|
+| `controlador.bat` | Control principal | `scripts/windows/` |
+| `configurar.bat` | Configuración inicial | `scripts/windows/` |
+| `iniciar.bat` | Inicio rápido | `scripts/windows/` |
 
 ### 🔧 **Comandos del Script Principal**
 ```bash
 # Configuración inicial (primera vez)
-./run.sh setup     # macOS/Linux
-run.bat setup      # Windows
+./manage.sh setup     # macOS/Linux
+manage.bat setup      # Windows
 
 # Modo desarrollo (H2)
-./run.sh dev       # macOS/Linux  
-run.bat dev        # Windows
+./manage.sh dev       # macOS/Linux  
+manage.bat dev        # Windows
 
 # Modo producción (PostgreSQL)
-./run.sh prod      # macOS/Linux
-run.bat prod       # Windows
+./manage.sh prod      # macOS/Linux
+manage.bat prod       # Windows
 
 # Ejecutar tests
-./run.sh test      # macOS/Linux
-run.bat test       # Windows
+./manage.sh test      # macOS/Linux
+manage.bat test       # Windows
 
 # Ver ayuda completa
-./run.sh help      # macOS/Linux
-run.bat help       # Windows
+./manage.sh help      # macOS/Linux
+manage.bat help       # Windows
 ```bash
 ./mvnw clean install -DskipTests
 ```

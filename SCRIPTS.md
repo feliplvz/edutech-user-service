@@ -1,23 +1,52 @@
 # 🚀 Scripts de Ejecución - EduTech User Service
 
-## 📋 **Scripts Disponibles**
+## 📋 **Estructura de Scripts Organizados**
 
-### 🖥️ **Para macOS/Linux:**
-- `./run.sh` - Script completo con múltiples comandos
-- `./start.sh` - Script de inicio rápido
+El proyecto implementa una **estructura profesional de scripts** organizada por plataforma, similar a proyectos empresariales.
 
-### 🪟 **Para Windows:**
-- `run.bat` - Script completo con múltiples comandos  
-- `start.bat` - Script de inicio rápido
+### 📁 **Estructura de Directorios**
+```
+user-service/
+├── 📜 manage.sh              # Script principal (macOS/Linux)
+├── 📜 manage.bat             # Script principal (Windows)
+├── 📜 start.sh               # Inicio rápido (macOS/Linux)
+├── 📜 start.bat              # Inicio rápido (Windows)
+└── 📂 scripts/
+    ├── 📂 mac/               # Scripts específicos macOS/Linux
+    │   ├── controlador.sh    # Controlador principal
+    │   ├── configurar.sh     # Configuración inicial
+    │   ├── iniciar.sh        # Inicio del servicio
+    │   ├── verificar-estado.sh # Verificar estado
+    │   └── detener.sh        # Detener servicio
+    └── 📂 windows/           # Scripts específicos Windows
+        ├── controlador.bat   # Controlador principal
+        ├── configurar.bat    # Configuración inicial
+        └── iniciar.bat       # Inicio del servicio
+```
 
----
+## 🎯 **Scripts Principales (Cross-Platform)**
 
-## 🔧 **Comandos del Script Principal**
+### 🖥️ **manage.sh / manage.bat**
+Script maestro que delega a los scripts específicos de cada plataforma.
 
-### 📦 **Configuración Inicial**
 ```bash
 # macOS/Linux
-./run.sh setup
+./manage.sh [comando]
+
+# Windows
+manage.bat [comando]
+```
+
+### 🚀 **start.sh / start.bat**
+Scripts de inicio rápido para desarrollo diario.
+
+```bash
+# macOS/Linux
+./start.sh
+
+# Windows
+start.bat
+```
 
 # Windows
 run.bat setup
