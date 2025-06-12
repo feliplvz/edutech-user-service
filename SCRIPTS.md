@@ -2,7 +2,7 @@
 
 ## 📋 **Estructura de Scripts Organizados**
 
-El proyecto implementa una **estructura profesional de scripts** organizada por plataforma, similar a proyectos empresariales, con scripts específicos para cada sistema operativo.
+El proyecto implementa una **estructura de scripts** organizada por plataforma, similar a proyectos empresariales, con scripts específicos para cada sistema operativo.
 
 ### 📁 **Estructura de Directorios**
 ```
