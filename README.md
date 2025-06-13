@@ -520,7 +520,7 @@ curl -X GET "http://localhost:8081/actuator/metrics"
 
 ```bash
 # 1. Fork del repositorio
-git fork https://github.com/edutech/user-service
+git fork https://github.com/feliplvz/edutech-user-service
 
 # 2. Crear rama de feature
 git checkout -b feature/nueva-funcionalidad
@@ -532,45 +532,10 @@ git commit -m "feat: agregar nueva funcionalidad"
 git push origin feature/nueva-funcionalidad
 ```
 
-### 📚 Recursos Adicionales
-
-- 📖 **Documentación Técnica**: `/docs` folder
-- 🎥 **Video Tutorials**: [EduTech Channel](https://youtube.com/edutech)
-- 💬 **Slack Community**: `#edutech-developers`
-- 📧 **Email Soporte**: `support@edutech.com`
-
-## 📄 Licencia y Legal
-
-### 📜 Licencia
-
-Este proyecto está bajo la **Licencia MIT** - ver el archivo [LICENSE](LICENSE) para más detalles.
-
-```
-MIT License
-
-Copyright (c) 2025 EduTech Platform
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software...
-```
-
-### 🔒 Política de Privacidad
-
-- **🛡️ Datos Protegidos**: Información personal encriptada
-- **📊 Analytics**: Solo datos agregados y anónimos
-- **🔄 Retention**: Datos eliminados según políticas de retención
-- **🌍 GDPR Compliant**: Cumple con regulaciones europeas
-
----
-
 ---
 
 <div align="center">
 
-Para más información, visita nuestra [documentación completa](./REPORTE_PRUEBAS_COMPLETO.md)
 
 [![API Status](https://img.shields.io/badge/API-Online-brightgreen.svg)](http://localhost:8081/api/test/hello)
 [![Last Updated](https://img.shields.io/badge/Updated-Mayo%202025-blue.svg)](https://github.com/edutech/user-service)
@@ -593,7 +558,7 @@ Para más información, visita nuestra [documentación completa](./REPORTE_PRUEB
 
 ### 🔧 Herramientas de Testing
 
-1. **📮 Colección de Postman**: `EduTech_UserService_TESTED.postman_collection.json`
+1. **📮 Colección de Postman**: `UserService_postman_collection.json`
    - ✅ 16 endpoints completamente probados
    - ✅ Scripts de testing automáticos
    - ✅ Variables de entorno configuradas
@@ -610,7 +575,7 @@ Para más información, visita nuestra [documentación completa](./REPORTE_PRUEB
 #### Opción 1: Postman (Recomendado)
 ```bash
 # Importar la colección en Postman
-File → Import → EduTech_UserService_TESTED.postman_collection.json
+File → Import → UserService_postman_collection.json
 ```
 
 #### Opción 2: cURL
