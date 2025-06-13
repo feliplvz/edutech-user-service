@@ -496,27 +496,6 @@ curl -X GET "http://localhost:8081/actuator/metrics"
 - **📊 Monitoring**: Integrar con sistemas de monitoreo
 - **🔄 Backup**: Configurar respaldos automáticos de BD
 
-## 🤝 Contribución y Soporte
-
-### 👨‍💻 Equipo de Desarrollo
-
-| Rol | Responsabilidad | Contacto |
-|-----|----------------|----------|
-| 🏗️ **Tech Lead** | Arquitectura y diseño | tech-lead@edutech.com |
-| 💻 **Backend Developer** | Implementación y testing | backend@edutech.com |
-| 🔧 **DevOps Engineer** | Deployment y infrastructure | devops@edutech.com |
-| 🧪 **QA Engineer** | Testing y calidad | qa@edutech.com |
-
-### 🐛 Reportar Issues
-
-1. 🔍 Verificar que el issue no existe ya
-2. 📝 Crear un issue detallado con:
-   - Descripción del problema
-   - Pasos para reproducir
-   - Logs relevantes
-   - Entorno (OS, Java version, etc.)
-
-### 🚀 Contribuir al Proyecto
 
 ```bash
 # 1. Fork del repositorio
