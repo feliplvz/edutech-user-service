@@ -22,8 +22,12 @@ readonly CYAN='\033[0;36m'
 readonly NC='\033[0m'
 
 # Banner simple
-echo -e "${CYAN}🚀 EduTech User Service - Inicio Rápido${NC}"
-echo "========================================"
+if [[ -f "${SCRIPT_DIR}/banner.sh" ]]; then
+    "${SCRIPT_DIR}/banner.sh" compact
+else
+    echo -e "${CYAN}🚀 EduTech User Service - Inicio Rápido${NC}"
+    echo "========================================"
+fi
 
 # Cambiar al directorio raíz
 cd "$ROOT_DIR"

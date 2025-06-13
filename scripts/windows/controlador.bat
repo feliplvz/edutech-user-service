@@ -46,16 +46,22 @@ echo [ERROR] Comando desconocido: %1
 goto show_help
 
 :show_banner
-echo.
-echo   ______    _       _______        _     
-echo  ^|  ____^|  ^| ^|     ^|__   __^|      ^| ^|    
-echo  ^| ^|__   __^| ^|_   _   ^| ^| ___  ___^| ^|__  
-echo  ^|  __^| / _` ^| ^| ^| ^|  ^| ^|/ _ \/ __^| '_ \ 
-echo  ^| ^|___^| ^(_^| ^| ^|_^| ^|  ^| ^|  __/ ^(__^| ^| ^| ^|
-echo  ^|______\__,_^\__,_^|  ^|_^|\___|\___|_^| ^|_^|
-echo.
-echo          🎓 USER SERVICE 🎓         
-echo.
+REM Usar el script de banner centralizado
+if exist "%~dp0banner.bat" (
+    call "%~dp0banner.bat" full
+) else (
+    REM Fallback si no existe el script de banner
+    echo.
+    echo   ______    _       _______        _     
+    echo  ^|  ____^|  ^| ^|     ^|__   __^|      ^| ^|    
+    echo  ^| ^|__   __^| ^|_   _   ^| ^| ___  ___^| ^|__  
+    echo  ^|  __^| / _` ^| ^| ^| ^|  ^| ^|/ _ \/ __^| '_ \ 
+    echo  ^| ^|___^| ^(_^| ^| ^|_^| ^|  ^| ^|  __/ ^(__^| ^| ^| ^|
+    echo  ^|______\__,_^\__,_^|  ^|_^|\___|\___|_^| ^|_^|
+    echo.
+    echo          🎓 USER SERVICE 🎓         
+    echo.
+)
 exit /b 0
 
 :log

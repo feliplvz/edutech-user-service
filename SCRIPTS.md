@@ -14,12 +14,14 @@ user-service/
     │   ├── iniciar.sh        # Inicio del servicio
     │   ├── verificar-estado.sh # Verificar estado
     │   ├── detener.sh        # Detener servicio
-    │   └── run.sh            # Script anterior (compatibilidad)
+    │   ├── run.sh            # Script anterior (compatibilidad)
+    │   └── banner.sh         # Script de banner
     └── 📂 windows/           # Scripts específicos Windows
         ├── controlador.bat   # Controlador principal
         ├── configurar.bat    # Configuración inicial
         ├── iniciar.bat       # Inicio del servicio
-        └── run.bat           # Script anterior (compatibilidad)
+        ├── run.bat           # Script anterior (compatibilidad)
+        └── banner.bat        # Script de banner
 ```
 
 ## 🎯 **Scripts Principales**
@@ -209,6 +211,44 @@ chmod +x scripts/mac/*.sh
 
 - 📖 [README.md](README.md) - Documentación completa
 - 🧪 [REPORTE_PRUEBAS_COMPLETO.md](Reporte_Pruebas_.md) - Resultados de testing
+
+---
+
+## 🎨 **Sistema de Banners**
+
+### 📁 **Scripts de Banner Centralizados**
+
+El proyecto incluye scripts dedicados para mostrar banners consistentes de EduTech:
+
+- `scripts/mac/banner.sh` - Banner para macOS/Linux
+- `scripts/windows/banner.bat` - Banner para Windows
+
+### 🎯 **Tipos de Banner Disponibles**
+
+```bash
+# Banner completo (pantalla completa)
+./scripts/mac/banner.sh full
+
+# Banner compacto (una línea)
+./scripts/mac/banner.sh compact
+
+# Banner de inicio de servidor
+./scripts/mac/banner.sh server
+
+# Banner de finalización
+./scripts/mac/banner.sh completion
+
+# Ayuda
+./scripts/mac/banner.sh help
+```
+
+### 🚀 **Banner en Spring Boot**
+
+El archivo `src/main/resources/banner.txt` muestra el banner de EduTech al iniciar el servidor Spring Boot, incluyendo información del puerto y versión.
+
+### 🔗 **Integración con Scripts**
+
+Todos los scripts principales (`controlador.sh`, `iniciar.sh`, etc.) ahora usan el sistema de banners centralizado, asegurando consistencia visual en toda la aplicación.
 
 ---
 

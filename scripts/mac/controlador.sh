@@ -29,16 +29,22 @@ readonly NC='\033[0m' # No Color
 
 # Banner del proyecto
 show_banner() {
-    echo -e "${CYAN}"
-    echo "  ______    _       _______        _     "
-    echo " |  ____|  | |     |__   __|      | |    "
-    echo " | |__   __| |_   _   | | ___  ___| |__  "
-    echo " |  __| / _\` | | | |  | |/ _ \\/ __| '_ \\ "
-    echo " | |___| (_| | |_| |  | |  __/ (__| | | |"
-    echo " |______\\__,_|\\__,_|  |_|\\___|\___|_| |_|"
-    echo ""
-    echo "         🎓 USER SERVICE 🎓         "
-    echo -e "${NC}"
+    # Usar el script de banner centralizado
+    if [[ -f "${SCRIPT_DIR}/banner.sh" ]]; then
+        "${SCRIPT_DIR}/banner.sh" full
+    else
+        # Fallback si no existe el script de banner
+        echo -e "${CYAN}"
+        echo "  ______    _       _______        _     "
+        echo " |  ____|  | |     |__   __|      | |    "
+        echo " | |__   __| |_   _   | | ___  ___| |__  "
+        echo " |  __| / _\` | | | |  | |/ _ \\/ __| '_ \\ "
+        echo " | |___| (_| | |_| |  | |  __/ (__| | | |"
+        echo " |______\\__,_|\\__,_|  |_|\\___|\___|_| |_|"
+        echo ""
+        echo "         🎓 USER SERVICE 🎓         "
+        echo -e "${NC}"
+    fi
 }
 
 # Función de logging

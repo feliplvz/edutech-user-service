@@ -5,6 +5,11 @@
  | |___| (_| | |_| |  | |  __/ (__| | | |
  |______\__,_|\__,_|  |_|\___|\___|_| |_|
 
-              USER SERVICE               
+         🎓 USER SERVICE 🎓         
+    ════════════════════════════════    
+    🚀 Microservicio de Usuarios      
+    📚 Sistema Educativo EduTech      
+    🌐 Puerto: 8081                   
+    ════════════════════════════════    
 
 :: Spring Boot ::    v${spring-boot.version}

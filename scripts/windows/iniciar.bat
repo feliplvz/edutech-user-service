@@ -13,10 +13,14 @@ set "SCRIPT_DIR=%~dp0"
 set "ROOT_DIR=%SCRIPT_DIR%..\.."
 
 REM Banner simple
-echo.
-echo 🚀 EduTech User Service - Inicio Rápido
-echo ========================================
-echo.
+if exist "%SCRIPT_DIR%banner.bat" (
+    call "%SCRIPT_DIR%banner.bat" compact
+) else (
+    echo.
+    echo 🚀 EduTech User Service - Inicio Rápido
+    echo ========================================
+    echo.
+)
 
 REM Cambiar al directorio raíz
 cd /d "%ROOT_DIR%"
